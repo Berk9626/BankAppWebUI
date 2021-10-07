@@ -1,0 +1,44 @@
+﻿@model SelectList
+
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*
+Sender Id'ye ihtiyacım var
+Acccount Id gidecek olan account Id ye
+Amoun miktar yani. Ne kadar yollayacağım. jjdllfhh dkkd dnbhlld dlkdldd nlddffndf dldsfdnfnfd dfm ola
+
+*@
+
+<div class="mt-3">
+	
+	<form asp-action="SendMoney" method="post" class="w-75 mx-auto">
+		<input type="hidden" name="SenderAccountId" value="@ViewBag.SenderAccountId" />
+		<div class="mb-3">
+			<label>Göndereceğiniz hesap numarası </label>
+			<select class="form-select" asp-items="@Model" name="AccountId">
+				@*paranın gideceği hesap numarası*@
+			</select>
+
+		</div>
+		<div class="mb-3">
+			<label>Göndereceğiniz tutar</label>
+			<input type="number" name="Amount" class="form-control" /> @*göndereeceğimiz tutar*@
+		</div>
+
+		<div class="mb-3">
+			<button type="submit" class="btn btn-primary">Para Gönder</button>
+
+
+		</div>
+
+
+
+	</form>
+
+</div>
+
+
+
+
